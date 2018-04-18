@@ -1,7 +1,7 @@
 <?php
 namespace Algorithms\UnionFind;
 
-class QuickUnion
+class QuickUnionImprovement
 {
     private $target = [];
 

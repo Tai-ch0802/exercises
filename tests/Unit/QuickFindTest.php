@@ -36,4 +36,19 @@ class QuickFindTest extends TestCase
         $this->quickFind->union(82, 84);
         $this->assertNotFalse($this->quickFind->connected(81, 84));
     }
+
+    public function testAll()
+    {
+        $target = 1000;
+        $start = microtime(true);
+        $this->quickFind->setTarget($target);
+
+        for ($i = 0; $i < ($target-1); $i++) {
+            $this->quickFind->union($i, $i+1);
+        }
+        $end = microtime(true);
+        $spent = $end - $start;
+        print_r(PHP_EOL . "一千目標測試中，quick-find花費時間為：{$spent}" . PHP_EOL);
+        $this->assertNotFalse($this->quickFind->connected(0, $target-1));
+    }
 }
