@@ -1,7 +1,7 @@
 <?php
 namespace Algorithms\UnionFind;
 
-class UnionFind
+class QuickFind
 {
     private $target = [];
 
