@@ -4,7 +4,7 @@ namespace Tests\Unit;
 use Algorithms\UnionFind\QuickFind;
 use Tests\TestCase;
 
-class UnionFindTest extends TestCase
+class QuickFindTest extends TestCase
 {
     /** @var QuickFind */
     private $quickFind;

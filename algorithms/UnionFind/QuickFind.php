@@ -5,7 +5,11 @@ class QuickFind
 {
     private $target = [];
 
-    public function union($a, $b)
+    /**
+     * @param $a
+     * @param $b
+     */
+    public function union($a, $b): void
     {
         $aPath = $this->target[$a];
         $bPath = $this->target[$b];
@@ -25,14 +29,6 @@ class QuickFind
     public function connected($a, $b): bool
     {
         return $this->target[$a] === $this->target[$b];
-    }
-
-    public function find($a)
-    {
-    }
-
-    public function count()
-    {
     }
 
     /**
