@@ -32,6 +32,25 @@ class QuickFind
     }
 
     /**
+     * To find the biggest
+     * @param $a
+     * @return mixed
+     */
+    public function find($a)
+    {
+        $max = $this->target[$a];
+        for ($i = $max; $i < count($this->target); $i++) {
+            if ($this->target[$i] !== $this->target[$a]) {
+                continue;
+            }
+            if ($this->target[$i] > $max) {
+                $max = $this->target[$i];
+            }
+        }
+        return $max;
+    }
+
+    /**
      * @param int $target
      */
     public function setTarget(int $target)

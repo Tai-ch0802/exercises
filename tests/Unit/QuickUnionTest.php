@@ -51,4 +51,18 @@ class QuickUnionTest extends TestCase
         print_r(PHP_EOL . "一千目標測試中，quick-union-improvement花費時間為：{$spent}" . PHP_EOL);
         $this->assertNotFalse($this->quickUnionImprovement->connected(0, $target-1));
     }
+
+    public function testFind()
+    {
+        $target = 1000;
+        $biggest = 543;
+
+        $this->quickUnionImprovement->setTarget($target);
+
+        for ($i = 0; $i < $biggest; $i++) {
+            $this->quickUnionImprovement->union($i, $i+1);
+        }
+
+        $this->assertEquals($biggest, $this->quickUnionImprovement->find(3));
+    }
 }

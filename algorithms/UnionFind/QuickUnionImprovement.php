@@ -22,7 +22,11 @@ class QuickUnionImprovement
             $bParent = $this->target[$bParent];
         } while ($bParent !== $this->target[$bParent]);
 
-        $this->target[$aParent] = $bParent;
+        if ($bParent > $this->target[$aParent]) {
+            $this->target[$aParent] = $bParent;
+        } else {
+            $this->target[$bParent] = $aParent;
+        }
     }
 
     /**
@@ -45,6 +49,22 @@ class QuickUnionImprovement
 
 
         return $aParent === $bParent;
+    }
+
+    /**
+     * To find the biggest
+     * @param $a
+     * @return mixed
+     */
+    public function find($a)
+    {
+        $aParent = $this->target[$a];
+
+        do {
+            $aParent = $this->target[$aParent];
+        } while ($aParent !== $this->target[$aParent]);
+
+        return $aParent;
     }
 
     /**

@@ -51,4 +51,18 @@ class QuickFindTest extends TestCase
         print_r(PHP_EOL . "一千目標測試中，quick-find花費時間為：{$spent}" . PHP_EOL);
         $this->assertNotFalse($this->quickFind->connected(0, $target-1));
     }
+
+    public function testFind()
+    {
+        $target = 1000;
+        $biggest = 543;
+
+        $this->quickFind->setTarget($target);
+
+        for ($i = 0; $i < $biggest; $i++) {
+            $this->quickFind->union($i, $i+1);
+        }
+
+        $this->assertEquals($biggest, $this->quickFind->find(3));
+    }
 }
