@@ -2,3 +2,7 @@
 /.vagrant
 /.idea
 /.vscode
+
+# Global/OSX.gitignore
+.DS_Store
+
