@@ -1,6 +1,6 @@
-// import edu.princeton.cs.algs4.StdRandom;
-// import edu.princeton.cs.algs4.StdStats;
-// import edu.princeton.cs.algs4.WeightedQuickUnionUF;
+import edu.princeton.cs.algs4.StdRandom;
+import edu.princeton.cs.algs4.StdStats;
+import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 import java.lang.IllegalArgumentException;
 
 public class Percolation {
@@ -8,12 +8,12 @@ public class Percolation {
     public static final int EMPTY_OPEN_SITE = 1;
     public static final int FULL_OPEN_SITE = 2;
 
-    private static int width;
-    private static int[][] target;
+    private int width;
+    private int[][] target;
 
-    private static int countOfOpenSites;
+    private int countOfOpenSites;
 
-    public void Percolation(int n) {
+    public Percolation(int n) {
         if (n <= 0) {
             throw new IllegalArgumentException();
         }
@@ -95,7 +95,7 @@ public class Percolation {
         System.out.println("default target[0][0]:" + percolation.target[0][0]);
 
         percolation.open(1,1);
-        System.out.println(percolation.target[0][0]);
+        System.out.println("afterOpen target[0][0]:" + percolation.target[0][0]);
 
     }   // test client (optional)
 }
