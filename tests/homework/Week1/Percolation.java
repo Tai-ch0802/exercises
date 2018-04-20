@@ -90,8 +90,7 @@ public class Percolation {
     }  // does the system percolate?
 
     public static void main(String[] args) {
-        Percolation percolation = new Percolation();
-        percolation.Percolation(100);
+        Percolation percolation = new Percolation(100);
         System.out.println("default target[0][0]:" + percolation.target[0][0]);
 
         percolation.open(1,1);
